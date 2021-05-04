@@ -1,0 +1,1 @@
+# japanino-touhou
