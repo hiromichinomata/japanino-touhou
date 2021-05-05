@@ -12,17 +12,26 @@ int melody[] = {
  NOTE_F4, NOTE_DF4, NOTE_E4, NOTE_C4, NOTE_G4, NOTE_E4, NOTE_EF4,
  NOTE_F4, NOTE_DF4, NOTE_E4, NOTE_C4, NOTE_G4, NOTE_E4, NOTE_EF4, NOTE_GF4,
  NOTE_F4, NOTE_DF4, NOTE_E4, NOTE_C4, NOTE_G4, NOTE_E4, NOTE_EF4,
- NOTE_BF3, NOTE_F4, NOTE_C4, NOTE_F4, NOTE_DF4, NOTE_EF4, NOTE_F4, NOTE_EF4, NOTE_G4
+ NOTE_BF3, NOTE_F4, NOTE_C4, NOTE_F4, NOTE_DF4, NOTE_EF4, NOTE_F4, NOTE_EF4, NOTE_G4,
+ NOTE_BF4, NOTE_F4, NOTE_C5, NOTE_DF5, NOTE_C5, NOTE_DF5, NOTE_C5, NOTE_BF4, NOTE_AF4,
+ NOTE_F4, NOTE_AF4, NOTE_EF4, NOTE_F4, NOTE_DF4,
+ NOTE_BF3, NOTE_F4, NOTE_C4, NOTE_F4, NOTE_DF4, NOTE_EF4, NOTE_F4, NOTE_EF4, NOTE_G4,
+ NOTE_BF4, NOTE_F4, NOTE_C5, NOTE_DF5, NOTE_C5, NOTE_DF5, NOTE_C5, NOTE_BF4, NOTE_AF4,
+ NOTE_BF4
 };
 
 // 音の長さ 4→四分音符、8→八分音符）
 int noteDurations[] = {
  4,4,4,4,4,4,4,4,
- 4,4,4,4,4,4,2, 
+ 4,4,4,4,4,4,2, // 15
  4,4,4,4,4,4,4,4,
- 4,4,4,4,4,4,2,
- 4,4,4,4,4,8,8,4,4
-// 8,8,8,8,8,16,16,8,8,8,8,8,8,2
+ 4,4,4,4,4,4,2, // 15
+ 4,4,4,4,4,8,8,4,4,
+ 8,8,8,8,8,16,16,8,8,
+ 8,8,8,8,2, // 23
+ 4,4,4,4,4,8,8,4,4,
+ 8,8,8,8,8,16,16,8,8,
+ 1 // 19
 };
 
 // ビットマップ(画像)を定義
@@ -65,7 +74,7 @@ digitalWrite(SWPIN, HIGH);  // 内蔵プルアップ有効
 
 void loop() {
  // メロディの音程を順番に奏でる。
- for (int thisNote = 0; thisNote < 39; thisNote++) {
+ for (int thisNote = 0; thisNote < 72; thisNote++) {
    // 音の長さを計算する。
    // 1秒＝1000を、音の長さの数値で割る。
    // 四分音符なら1000/4、八分音符なら1000/8
